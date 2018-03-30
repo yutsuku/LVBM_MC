@@ -37,8 +37,10 @@ LVBM_BARON_SET_ICON			= "Set icon";
 LVBM_BARON_BOMB_WHISPER		= "You are the bomb!";
 LVBM_BARON_BOMB_WARNING    	= "*** %s is the bomb ***";
 LVBM_BARON_INFERNO_WARNING	= "*** Inferno ***";
+LVBM_BARON_INFERNO_WARNING2	= "*** Inferno soon ***";
 LVBM_BARON_BOMB_REGEXP	 	= "([^%s]+) (%w+) afflicted by Living Bomb.";
 LVBM_BARON_INFERNO			= "Baron Geddon gains Inferno.";
+LVBM_BARON_INFERNO2			= "Baron Geddon is afflicted by Inferno.";
 
 -- 6. Shazzrah
 LVBM_SHAZZRAH_NAME					= "Shazzrah";
@@ -78,7 +80,7 @@ LVBM_RAGNAROS_EMERGED		= "*** Ragnaros has emerged - 3 minutes until submerge **
 LVBM_RAGNAROS_SUBMERGE_WARN	= "*** Submerge in %s %s ***";
 LVBM_RAGNAROS_SUBMERGED		= "*** Ragnaros submerged for 90 seconds ***";
 LVBM_RAGNAROS_EMERGE_WARN	= "*** Emerge in %s %s ***";
-LVBM_RAGNAROS_WRATH_WARN1	= "*** Wrath of Ragnaros - next in 30 sec ***";
+LVBM_RAGNAROS_WRATH_WARN1	= "*** Wrath of Ragnaros - next in 25 sec ***";
 LVBM_RAGNAROS_WRATH_WARN2	= "*** Wrath of Ragnaros in %s sec ***";
 LVBM_RAGNAROS_HITS			= "Ragnaros ([hitscr]+) ([^%s]+) for (%d+)";
 LVBM_RAGNAROS_WRATH	 		= "TASTE THE FLAMES OF SULFURON!";

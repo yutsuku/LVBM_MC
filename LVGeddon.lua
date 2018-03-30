@@ -30,7 +30,12 @@ LVBM.AddOns.Geddon = {
 		["CHAT_MSG_SPELL_PERIODIC_PARTY_DAMAGE"] = true,
 		["CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE"] = true,
 		["CHAT_MSG_SPELL_PERIODIC_CREATURE_BUFFS"] = true,
-	},	
+		["CHAT_MSG_SPELL_PERIODIC_CREATURE_DAMAGE"] = true,
+	},
+	["OnCombatStart"] = function(delay)
+		LVBM.StartStatusBarTimer(20 - delay, "Inferno");
+		LVBM.Schedule(20 - delay, "LVBM.AddOns.Geddon.OnEvent", "InfernoWarning", 5);
+	end,
 	["OnCombatEnd"] = function()
 		if( LVBM.AddOns.Geddon.Options.SetIcon ) then
 			LVBM.CleanUp();
@@ -68,10 +73,19 @@ LVBM.AddOns.Geddon = {
 					end	
 				end
 			end
+		elseif ( event == "InfernoWarning" ) then
+			LVBM.Announce(LVBM_BARON_INFERNO_WARNING2);
 		elseif ( event == "CHAT_MSG_SPELL_PERIODIC_CREATURE_BUFFS" ) then
 			if arg1 == LVBM_BARON_INFERNO then
 				LVBM.Announce(LVBM_BARON_INFERNO_WARNING);
 				LVBM.StartStatusBarTimer(8, "Inferno");
+				LVBM.Schedule(20 - delay, "LVBM.AddOns.Geddon.OnEvent", "InfernoWarning", 5);
+			end
+		elseif ( event == "CHAT_MSG_SPELL_PERIODIC_CREATURE_DAMAGE" ) then
+			if arg1 == LVBM_BARON_INFERNO2 then
+				LVBM.Announce(LVBM_BARON_INFERNO_WARNING);
+				LVBM.StartStatusBarTimer(8, "Inferno");
+				LVBM.Schedule(20 - delay, "LVBM.AddOns.Geddon.OnEvent", "InfernoWarning", 5);
 			end
 		end
 	end,		

@@ -25,6 +25,8 @@ LVBM.AddOns.Ragnaros = {
 		LVBM.Schedule(150 - delay, "LVBM.AddOns.Ragnaros.OnEvent", "SubmergeWarning", 30);
 		LVBM.Schedule(165 - delay, "LVBM.AddOns.Ragnaros.OnEvent", "SubmergeWarning", 15);
 		LVBM.StartStatusBarTimer(180 - delay, "Submerge");
+		LVBM.StartStatusBarTimer(25 - delay, "Wrath of Ragnaros");
+		LVBM.Schedule(20 - delay, "LVBM.AddOns.Ragnaros.OnEvent", "WrathWarning", 5);
 	end,
 	["OnCombatEnd"] = function()
 		LVBM.AddOns.Ragnaros.Submerged = false;
@@ -34,8 +36,8 @@ LVBM.AddOns.Ragnaros = {
 			if ( arg1 == LVBM_RAGNAROS_WRATH ) then
 				LVBM.Announce(LVBM_RAGNAROS_WRATH_WARN1);
 				LVBM.EndStatusBarTimer("Wrath of Ragnaros");
-				LVBM.StartStatusBarTimer(30, "Wrath of Ragnaros");
-				LVBM.Schedule(25, "LVBM.AddOns.Ragnaros.OnEvent", "WrathWarning", 5);
+				LVBM.StartStatusBarTimer(25, "Wrath of Ragnaros");
+				LVBM.Schedule(20, "LVBM.AddOns.Ragnaros.OnEvent", "WrathWarning", 5);
 			elseif ( arg1 == LVBM_RAGNAROS_SUBMERGE ) then
 				LVBM.AddOns.Ragnaros.Submerged = true;
 				LVBM.UnSchedule("LVBM.AddOns.Ragnaros.OnEvent", "WrathWarning", 5);
